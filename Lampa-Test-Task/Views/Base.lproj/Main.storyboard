@@ -123,12 +123,19 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="Xdb-5o-eri"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="qo1-Ad-9f6"/>
                             </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" defersCurrentPageDisplay="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="iJa-Zv-hgO">
+                                <rect key="frame" x="146.33333333333334" y="824.66666666666663" width="121.33333333333334" height="27.333333333333371"/>
+                                <color key="pageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3Ag-n4-QCo"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yAG-nF-Qfm" firstAttribute="width" secondItem="1bK-U1-AA8" secondAttribute="width" id="1Ec-WK-Tc9"/>
+                            <constraint firstItem="iJa-Zv-hgO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Wb-sv-LU6"/>
+                            <constraint firstItem="3Ag-n4-QCo" firstAttribute="bottom" secondItem="iJa-Zv-hgO" secondAttribute="bottom" constant="10" id="80f-do-zRd"/>
                             <constraint firstItem="1bK-U1-AA8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9EW-X8-qtv"/>
                             <constraint firstAttribute="trailing" secondItem="1bK-U1-AA8" secondAttribute="trailing" id="Beg-v5-GtN"/>
                             <constraint firstItem="hmX-gB-b7q" firstAttribute="trailing" secondItem="3Ag-n4-QCo" secondAttribute="trailing" id="EKl-26-Q5k"/>
@@ -145,6 +152,10 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <connections>
+                        <outlet property="tabsPageControl" destination="iJa-Zv-hgO" id="eOS-ZD-cAJ"/>
+                        <outlet property="tabsScrollView" destination="hmX-gB-b7q" id="51u-bT-nci"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
