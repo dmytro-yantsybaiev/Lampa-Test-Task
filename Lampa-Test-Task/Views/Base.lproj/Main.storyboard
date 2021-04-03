@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1bK-U1-AA8">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1bK-U1-AA8" userLabel="Menu View">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="89.666666666666671"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="EoL-Pl-Zhl">
@@ -59,7 +60,7 @@
                                     <constraint firstItem="ymw-2a-Iha" firstAttribute="width" secondItem="1bK-U1-AA8" secondAttribute="width" multiplier="0.7" id="r1l-4z-A6J"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yAG-nF-Qfm">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yAG-nF-Qfm" userLabel="Tab Buttons View">
                                 <rect key="frame" x="0.0" y="89.666666666666671" width="414" height="53.666666666666671"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gTs-M5-lja">
@@ -91,6 +92,37 @@
                                     <constraint firstAttribute="bottom" secondItem="gTs-M5-lja" secondAttribute="bottom" id="ub6-qI-mAE"/>
                                 </constraints>
                             </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmX-gB-b7q">
+                                <rect key="frame" x="0.0" y="143.33333333333331" width="414" height="752.66666666666674"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ACO-cd-S0o">
+                                        <rect key="frame" x="0.0" y="0.0" width="1242" height="752.66666666666663"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D5K-0E-Kzd">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="752.66666666666663"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ubB-9a-YtZ">
+                                                <rect key="frame" x="414" y="0.0" width="414" height="752.66666666666663"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hl1-qY-DjY">
+                                                <rect key="frame" x="828" y="0.0" width="414" height="752.66666666666663"/>
+                                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ACO-cd-S0o" firstAttribute="height" secondItem="qo1-Ad-9f6" secondAttribute="height" id="1PQ-2A-3cx"/>
+                                    <constraint firstItem="ACO-cd-S0o" firstAttribute="bottom" secondItem="Xdb-5o-eri" secondAttribute="bottom" id="Mb5-RF-kow"/>
+                                    <constraint firstItem="ACO-cd-S0o" firstAttribute="trailing" secondItem="Xdb-5o-eri" secondAttribute="trailing" id="Vqa-bN-GnS"/>
+                                    <constraint firstItem="ACO-cd-S0o" firstAttribute="leading" secondItem="Xdb-5o-eri" secondAttribute="leading" id="foY-aC-UpG"/>
+                                    <constraint firstItem="ACO-cd-S0o" firstAttribute="top" secondItem="Xdb-5o-eri" secondAttribute="top" id="zy1-Yg-JEK"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Xdb-5o-eri"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="qo1-Ad-9f6"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3Ag-n4-QCo"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -99,10 +131,15 @@
                             <constraint firstItem="yAG-nF-Qfm" firstAttribute="width" secondItem="1bK-U1-AA8" secondAttribute="width" id="1Ec-WK-Tc9"/>
                             <constraint firstItem="1bK-U1-AA8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9EW-X8-qtv"/>
                             <constraint firstAttribute="trailing" secondItem="1bK-U1-AA8" secondAttribute="trailing" id="Beg-v5-GtN"/>
+                            <constraint firstItem="hmX-gB-b7q" firstAttribute="trailing" secondItem="3Ag-n4-QCo" secondAttribute="trailing" id="EKl-26-Q5k"/>
+                            <constraint firstItem="hmX-gB-b7q" firstAttribute="top" secondItem="yAG-nF-Qfm" secondAttribute="bottom" id="GrA-aL-HEx"/>
                             <constraint firstItem="yAG-nF-Qfm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HlP-DR-PeG"/>
                             <constraint firstItem="1bK-U1-AA8" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.1" id="OWu-s9-kOA"/>
+                            <constraint firstItem="D5K-0E-Kzd" firstAttribute="width" secondItem="yAG-nF-Qfm" secondAttribute="width" id="Rod-Sr-qlv"/>
+                            <constraint firstItem="hmX-gB-b7q" firstAttribute="leading" secondItem="3Ag-n4-QCo" secondAttribute="leading" id="c35-7J-qeJ"/>
                             <constraint firstItem="yAG-nF-Qfm" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.06" id="fTA-fo-2XM"/>
                             <constraint firstItem="EoL-Pl-Zhl" firstAttribute="top" secondItem="3Ag-n4-QCo" secondAttribute="top" id="mOv-ZF-gkH"/>
+                            <constraint firstAttribute="bottom" secondItem="hmX-gB-b7q" secondAttribute="bottom" id="nfK-Md-Rvs"/>
                             <constraint firstItem="yAG-nF-Qfm" firstAttribute="top" secondItem="1bK-U1-AA8" secondAttribute="bottom" id="oDR-Lw-Uxe"/>
                             <constraint firstItem="1bK-U1-AA8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="t7Y-qc-cN5"/>
                         </constraints>
@@ -117,5 +154,14 @@
     <resources>
         <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
