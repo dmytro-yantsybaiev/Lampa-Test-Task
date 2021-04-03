@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Stories View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="StoriesViewController" customModule="Lampa_Test_Task" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Lampa_Test_Task" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,8 +153,8 @@
                     </view>
                     <toolbarItems/>
                     <connections>
-                        <outlet property="tabsPageControl" destination="iJa-Zv-hgO" id="eOS-ZD-cAJ"/>
-                        <outlet property="tabsScrollView" destination="hmX-gB-b7q" id="51u-bT-nci"/>
+                        <outlet property="tabsPageControl" destination="iJa-Zv-hgO" id="00V-pV-HLQ"/>
+                        <outlet property="tabsScrollView" destination="hmX-gB-b7q" id="gdB-LE-pDK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

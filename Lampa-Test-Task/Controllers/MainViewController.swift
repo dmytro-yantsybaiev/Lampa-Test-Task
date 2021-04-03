@@ -12,6 +12,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var tabsScrollView: UIScrollView!
     @IBOutlet weak var tabsPageControl: UIPageControl!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
