@@ -58,13 +58,37 @@
 			children = (
 				0C64C651261894C40006DECA /* AppDelegate.swift */,
 				0C64C653261894C40006DECA /* SceneDelegate.swift */,
-				0C64C655261894C40006DECA /* ViewController.swift */,
-				0C64C657261894C40006DECA /* Main.storyboard */,
+				0C64C6692618957D0006DECA /* Models */,
+				0C64C668261895730006DECA /* Views */,
+				0C64C667261895690006DECA /* Controllers */,
 				0C64C65A261894C60006DECA /* Assets.xcassets */,
 				0C64C65C261894C60006DECA /* LaunchScreen.storyboard */,
 				0C64C65F261894C60006DECA /* Info.plist */,
 			);
 			path = "Lampa-Test-Task";
+			sourceTree = "<group>";
+		};
+		0C64C667261895690006DECA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0C64C655261894C40006DECA /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0C64C668261895730006DECA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0C64C657261894C40006DECA /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0C64C6692618957D0006DECA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +313,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2ZK2BA5X87;
 				INFOPLIST_FILE = "Lampa-Test-Task/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +321,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dmytroyantsybaiev.Lampa-Test-Task";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,6 +333,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2ZK2BA5X87;
 				INFOPLIST_FILE = "Lampa-Test-Task/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +341,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dmytroyantsybaiev.Lampa-Test-Task";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
