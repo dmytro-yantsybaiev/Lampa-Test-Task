@@ -104,11 +104,35 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ubB-9a-YtZ">
                                                 <rect key="frame" x="414" y="0.0" width="414" height="752.66666666666663"/>
-                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qz-Kp-Nx2">
+                                                        <rect key="frame" x="115.00000000000001" y="352.33333333333337" width="184.33333333333337" height="48"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="6qz-Kp-Nx2" firstAttribute="centerX" secondItem="ubB-9a-YtZ" secondAttribute="centerX" id="3aI-4g-psK"/>
+                                                    <constraint firstItem="6qz-Kp-Nx2" firstAttribute="centerY" secondItem="ubB-9a-YtZ" secondAttribute="centerY" id="lYp-qW-cZQ"/>
+                                                </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hl1-qY-DjY">
                                                 <rect key="frame" x="828" y="0.0" width="414" height="752.66666666666663"/>
-                                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3A-xe-i8s">
+                                                        <rect key="frame" x="115.00000000000001" y="352.33333333333337" width="184.33333333333337" height="48"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="c3A-xe-i8s" firstAttribute="centerX" secondItem="hl1-qY-DjY" secondAttribute="centerX" id="ENL-em-NT1"/>
+                                                    <constraint firstItem="c3A-xe-i8s" firstAttribute="centerY" secondItem="hl1-qY-DjY" secondAttribute="centerY" id="gxh-9M-wVp"/>
+                                                </constraints>
                                             </view>
                                         </subviews>
                                     </stackView>
@@ -167,12 +191,6 @@
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
