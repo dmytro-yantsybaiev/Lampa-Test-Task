@@ -21,11 +21,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1bK-U1-AA8" userLabel="Menu View">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="89.666666666666671"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="EoL-Pl-Zhl">
-                                        <rect key="frame" x="0.0" y="44" width="414" height="45.666666666666657"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="EoL-Pl-Zhl" userLabel="Menu Stack View">
+                                        <rect key="frame" x="0.0" y="49" width="414" height="40.666666666666657"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPu-Bb-ElO" userLabel="Menu Button">
-                                                <rect key="frame" x="0.0" y="0.0" width="62" height="45.666666666666664"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="62" height="40.666666666666664"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
@@ -33,13 +33,13 @@
                                                 </state>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymw-2a-Iha">
-                                                <rect key="frame" x="62" y="0.0" width="290" height="45.666666666666664"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <rect key="frame" x="62" y="0.0" width="290" height="40.666666666666664"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xS-Q8-YBU" userLabel="Search Button">
-                                                <rect key="frame" x="352" y="0.0" width="62" height="45.666666666666664"/>
+                                                <rect key="frame" x="352" y="0.0" width="62" height="40.666666666666664"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -117,9 +117,9 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D5K-0E-Kzd" userLabel="Stories View">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="752.66666666666663"/>
                                                 <subviews>
-                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gur-v7-1NQ">
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gur-v7-1NQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="752.66666666666663"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </tableView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -140,7 +140,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="6qz-Kp-Nx2" firstAttribute="centerX" secondItem="ubB-9a-YtZ" secondAttribute="centerX" id="3aI-4g-psK"/>
                                                     <constraint firstItem="6qz-Kp-Nx2" firstAttribute="centerY" secondItem="ubB-9a-YtZ" secondAttribute="centerY" id="lYp-qW-cZQ"/>
@@ -156,7 +156,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="c3A-xe-i8s" firstAttribute="centerX" secondItem="hl1-qY-DjY" secondAttribute="centerX" id="ENL-em-NT1"/>
                                                     <constraint firstItem="c3A-xe-i8s" firstAttribute="centerY" secondItem="hl1-qY-DjY" secondAttribute="centerY" id="gxh-9M-wVp"/>
@@ -178,7 +178,7 @@
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" defersCurrentPageDisplay="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="iJa-Zv-hgO">
                                 <rect key="frame" x="146.33333333333334" y="824.66666666666663" width="121.33333333333334" height="27.333333333333371"/>
                                 <color key="pageIndicatorTintColor" systemColor="systemGray2Color"/>
-                                <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" systemColor="systemBlueColor"/>
                             </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3Ag-n4-QCo"/>
@@ -197,7 +197,7 @@
                             <constraint firstItem="D5K-0E-Kzd" firstAttribute="width" secondItem="yAG-nF-Qfm" secondAttribute="width" id="Rod-Sr-qlv"/>
                             <constraint firstItem="hmX-gB-b7q" firstAttribute="leading" secondItem="3Ag-n4-QCo" secondAttribute="leading" id="c35-7J-qeJ"/>
                             <constraint firstItem="yAG-nF-Qfm" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.06" id="fTA-fo-2XM"/>
-                            <constraint firstItem="EoL-Pl-Zhl" firstAttribute="top" secondItem="3Ag-n4-QCo" secondAttribute="top" id="mOv-ZF-gkH"/>
+                            <constraint firstItem="EoL-Pl-Zhl" firstAttribute="top" secondItem="3Ag-n4-QCo" secondAttribute="top" constant="5" id="mOv-ZF-gkH"/>
                             <constraint firstAttribute="bottom" secondItem="hmX-gB-b7q" secondAttribute="bottom" id="nfK-Md-Rvs"/>
                             <constraint firstItem="yAG-nF-Qfm" firstAttribute="top" secondItem="1bK-U1-AA8" secondAttribute="bottom" id="oDR-Lw-Uxe"/>
                             <constraint firstItem="1bK-U1-AA8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="t7Y-qc-cN5"/>
@@ -206,6 +206,7 @@
                     <toolbarItems/>
                     <connections>
                         <outlet property="favouritesTabButton" destination="6U1-oX-RsN" id="oWI-zT-HQw"/>
+                        <outlet property="mainTableView" destination="gur-v7-1NQ" id="UJM-Ea-s9v"/>
                         <outlet property="storiesTabButton" destination="aCN-4I-phj" id="rNf-CX-SRe"/>
                         <outlet property="tabsPageControl" destination="iJa-Zv-hgO" id="00V-pV-HLQ"/>
                         <outlet property="tabsScrollView" destination="hmX-gB-b7q" id="5lO-9Z-tWh"/>
@@ -253,11 +254,11 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

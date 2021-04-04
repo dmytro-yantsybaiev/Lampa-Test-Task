@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var favouritesTabButton: UIButton!
     @IBOutlet weak var tabsScrollView: UIScrollView!
     @IBOutlet weak var tabsPageControl: UIPageControl!
+    @IBOutlet weak var mainTableView: UITableView!
     
     lazy var tabButtons = [storiesTabButton, videoTabButton, favouritesTabButton]
     var currentTabPage: CGFloat = 0
@@ -22,6 +23,9 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         tabsScrollView.delegate = self
+        mainTableView.dataSource = self
+        
+        mainTableView.register(UINib(nibName: "PopularMovieCell", bundle: nil), forCellReuseIdentifier: "ReusablePopularMovieCell")
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -81,4 +85,17 @@ extension MainViewController: UIScrollViewDelegate {
             setSelectedTabButtonCollorWhite(tabButtons[2]!)
         }
     }
+}
+
+extension MainViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusablePopularMovieCell", for: indexPath) as! PopularMovieCell
+        return cell
+    }
+
+
 }
