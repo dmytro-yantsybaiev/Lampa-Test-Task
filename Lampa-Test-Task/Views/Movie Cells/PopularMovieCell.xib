@@ -19,33 +19,51 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NXd-5w-yev" userLabel="Content Stack View">
-                        <rect key="frame" x="20" y="20" width="500" height="855"/>
+                        <rect key="frame" x="20" y="20" width="500" height="875"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="x9FrNr3KcLKsTVqzitIDFwxq48l" translatesAutoresizingMaskIntoConstraints="NO" id="EeN-MC-JAd">
                                 <rect key="frame" x="0.0" y="0.0" width="500" height="750"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="750" id="GDy-mD-Ak3"/>
+                                    <constraint firstAttribute="height" constant="750" id="GDy-mD-Ak3"/>
                                     <constraint firstAttribute="width" secondItem="EeN-MC-JAd" secondAttribute="height" multiplier="2:3" id="neZ-Xh-htx"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="40"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="j9X-0I-jha">
-                                <rect key="frame" x="0.0" y="755" width="500" height="100"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="I7o-0Z-wX1">
+                                <rect key="frame" x="0.0" y="755" width="500" height="120"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Godzilla vs. Kong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOP-Fg-a4T">
+                                        <rect key="frame" x="0.0" y="0.0" width="500" height="29"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="j9X-0I-jha">
+                                        <rect key="frame" x="0.0" y="29" width="500" height="67"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <string key="text">In a time when monsters walk the Earth, humanity’s fight for its future sets Godzilla and Kong on a collision course that will see the two most powerful forces of nature on the planet collide in a spectacular battle for the ages.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release date: 2021-03-24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uih-o1-euU">
+                                        <rect key="frame" x="0.0" y="96" width="500" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="9bX-wa-Mf4"/>
+                                    <constraint firstItem="SOP-Fg-a4T" firstAttribute="height" secondItem="I7o-0Z-wX1" secondAttribute="height" multiplier="0.24" id="WTE-Iw-ohr"/>
+                                    <constraint firstAttribute="height" constant="120" id="X62-Id-T4d"/>
+                                    <constraint firstItem="uih-o1-euU" firstAttribute="height" secondItem="I7o-0Z-wX1" secondAttribute="height" multiplier="0.2" id="it1-r9-aGj"/>
                                 </constraints>
-                                <string key="text">In a time when monsters walk the Earth, humanity’s fight for its future sets Godzilla and Kong on a collision course that will see the two most powerful forces of nature on the planet collide in a spectacular battle for the ages.</string>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="j9X-0I-jha" secondAttribute="bottom" id="IHr-m0-KoD"/>
                             <constraint firstItem="EeN-MC-JAd" firstAttribute="top" secondItem="NXd-5w-yev" secondAttribute="top" id="rTD-Sq-iLb"/>
                         </constraints>
                     </stackView>
