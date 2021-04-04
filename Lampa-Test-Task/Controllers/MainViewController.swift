@@ -35,7 +35,16 @@ class MainViewController: UIViewController {
         UIView.animate(withDuration: 0.2) {
             self.changeScrollViewPositionToSelectedTab(sender)
         }
-        
+    }
+    
+    @IBAction func searchButtonPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "goToSearch", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "goToSearch" {
+//            let searchVC = segue.destination as! SearchViewController
+//        }
     }
     
     func setAllTabButtonsCollorGray() {

@@ -24,7 +24,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="EoL-Pl-Zhl">
                                         <rect key="frame" x="0.0" y="44" width="414" height="45.666666666666657"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPu-Bb-ElO">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPu-Bb-ElO" userLabel="Menu Button">
                                                 <rect key="frame" x="0.0" y="0.0" width="62" height="45.666666666666664"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -38,13 +38,16 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xS-Q8-YBU">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xS-Q8-YBU" userLabel="Search Button">
                                                 <rect key="frame" x="352" y="0.0" width="62" height="45.666666666666664"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lyf-rB-62c"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -195,11 +198,41 @@
                         <outlet property="tabsPageControl" destination="iJa-Zv-hgO" id="00V-pV-HLQ"/>
                         <outlet property="tabsScrollView" destination="hmX-gB-b7q" id="5lO-9Z-tWh"/>
                         <outlet property="videoTabButton" destination="qKf-Ek-WLf" id="Xfv-8b-FcB"/>
+                        <segue destination="x5y-LU-57t" kind="presentation" identifier="goToSearch" id="iQP-54-qeI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-159.42028985507247" y="118.52678571428571"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="LGO-MA-bwx">
+            <objects>
+                <viewController id="x5y-LU-57t" customClass="SearchViewController" customModule="Lampa_Test_Task" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qxp-OR-IFg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="vZ2-du-W5f">
+                                <rect key="frame" x="0.0" y="60" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fvW-U9-igZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vZ2-du-W5f" firstAttribute="top" secondItem="fvW-U9-igZ" secondAttribute="top" constant="60" id="XSL-Gl-wyI"/>
+                            <constraint firstItem="vZ2-du-W5f" firstAttribute="leading" secondItem="fvW-U9-igZ" secondAttribute="leading" id="wNR-Qu-FRK"/>
+                            <constraint firstItem="fvW-U9-igZ" firstAttribute="trailing" secondItem="vZ2-du-W5f" secondAttribute="trailing" id="xD4-M0-I8w"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="vZ2-du-W5f" id="QaH-AR-rkv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NzI-CL-Wqy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="817" y="119"/>
         </scene>
     </scenes>
     <resources>
