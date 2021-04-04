@@ -114,11 +114,23 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ACO-cd-S0o">
                                         <rect key="frame" x="0.0" y="0.0" width="1242" height="752.66666666666663"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D5K-0E-Kzd">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D5K-0E-Kzd" userLabel="Stories View">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="752.66666666666663"/>
+                                                <subviews>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gur-v7-1NQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="752.66666666666663"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </tableView>
+                                                </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="gur-v7-1NQ" firstAttribute="top" secondItem="D5K-0E-Kzd" secondAttribute="top" id="5Bh-LE-3T1"/>
+                                                    <constraint firstAttribute="bottom" secondItem="gur-v7-1NQ" secondAttribute="bottom" id="7I4-Fe-YXm"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gur-v7-1NQ" secondAttribute="trailing" id="nm4-cq-mTY"/>
+                                                    <constraint firstItem="gur-v7-1NQ" firstAttribute="leading" secondItem="D5K-0E-Kzd" secondAttribute="leading" id="xfb-AM-nhF"/>
+                                                </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ubB-9a-YtZ">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ubB-9a-YtZ" userLabel="Video View">
                                                 <rect key="frame" x="414" y="0.0" width="414" height="752.66666666666663"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qz-Kp-Nx2">
@@ -134,7 +146,7 @@
                                                     <constraint firstItem="6qz-Kp-Nx2" firstAttribute="centerY" secondItem="ubB-9a-YtZ" secondAttribute="centerY" id="lYp-qW-cZQ"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hl1-qY-DjY">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hl1-qY-DjY" userLabel="Favourites View">
                                                 <rect key="frame" x="828" y="0.0" width="414" height="752.66666666666663"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3A-xe-i8s">

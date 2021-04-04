@@ -13,6 +13,7 @@
 		0C64C65E261894C60006DECA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C64C65C261894C60006DECA /* LaunchScreen.storyboard */; };
 		0C64C6712618B6400006DECA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C64C6702618B6400006DECA /* Assets.xcassets */; };
 		0C64C67B2618CCC10006DECA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C64C67A2618CCC10006DECA /* MainViewController.swift */; };
+		0CAAAD522619CC2E00925E51 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAAAD512619CC2E00925E51 /* Movie.swift */; };
 		0CF6077E2619BD6F00BDF4CC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF6077D2619BD6F00BDF4CC /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		0C64C65F261894C60006DECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C64C6702618B6400006DECA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C64C67A2618CCC10006DECA /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0CAAAD512619CC2E00925E51 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		0CF6077D2619BD6F00BDF4CC /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,7 +62,7 @@
 			children = (
 				0C64C651261894C40006DECA /* AppDelegate.swift */,
 				0C64C653261894C40006DECA /* SceneDelegate.swift */,
-				0C64C6692618957D0006DECA /* Models */,
+				0CAAAD502619C8C300925E51 /* Models */,
 				0C64C668261895730006DECA /* Views */,
 				0C64C667261895690006DECA /* Controllers */,
 				0C64C6702618B6400006DECA /* Assets.xcassets */,
@@ -87,9 +89,10 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		0C64C6692618957D0006DECA /* Models */ = {
+		0CAAAD502619C8C300925E51 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0CAAAD512619CC2E00925E51 /* Movie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				0C64C654261894C40006DECA /* SceneDelegate.swift in Sources */,
 				0CF6077E2619BD6F00BDF4CC /* SearchViewController.swift in Sources */,
 				0C64C67B2618CCC10006DECA /* MainViewController.swift in Sources */,
+				0CAAAD522619CC2E00925E51 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
