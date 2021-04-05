@@ -175,19 +175,12 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="Xdb-5o-eri"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="qo1-Ad-9f6"/>
                             </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" defersCurrentPageDisplay="YES" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="iJa-Zv-hgO">
-                                <rect key="frame" x="146.33333333333334" y="834.66666666666663" width="121.33333333333334" height="27.333333333333371"/>
-                                <color key="pageIndicatorTintColor" systemColor="systemGray2Color"/>
-                                <color key="currentPageIndicatorTintColor" systemColor="systemBlueColor"/>
-                            </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3Ag-n4-QCo"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yAG-nF-Qfm" firstAttribute="width" secondItem="1bK-U1-AA8" secondAttribute="width" id="1Ec-WK-Tc9"/>
-                            <constraint firstItem="iJa-Zv-hgO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Wb-sv-LU6"/>
-                            <constraint firstItem="3Ag-n4-QCo" firstAttribute="bottom" secondItem="iJa-Zv-hgO" secondAttribute="bottom" id="80f-do-zRd"/>
                             <constraint firstItem="1bK-U1-AA8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9EW-X8-qtv"/>
                             <constraint firstAttribute="trailing" secondItem="1bK-U1-AA8" secondAttribute="trailing" id="Beg-v5-GtN"/>
                             <constraint firstItem="hmX-gB-b7q" firstAttribute="trailing" secondItem="3Ag-n4-QCo" secondAttribute="trailing" id="EKl-26-Q5k"/>
@@ -208,7 +201,6 @@
                         <outlet property="favouritesTabButton" destination="6U1-oX-RsN" id="oWI-zT-HQw"/>
                         <outlet property="mainTableView" destination="gur-v7-1NQ" id="UJM-Ea-s9v"/>
                         <outlet property="storiesTabButton" destination="aCN-4I-phj" id="rNf-CX-SRe"/>
-                        <outlet property="tabsPageControl" destination="iJa-Zv-hgO" id="00V-pV-HLQ"/>
                         <outlet property="tabsScrollView" destination="hmX-gB-b7q" id="5lO-9Z-tWh"/>
                         <outlet property="videoTabButton" destination="qKf-Ek-WLf" id="Xfv-8b-FcB"/>
                         <segue destination="x5y-LU-57t" kind="presentation" identifier="goToSearch" id="iQP-54-qeI"/>
@@ -253,12 +245,6 @@
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

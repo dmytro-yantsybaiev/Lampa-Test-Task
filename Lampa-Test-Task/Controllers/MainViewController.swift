@@ -13,7 +13,6 @@ class MainViewController: UIViewController {
     @IBOutlet weak var videoTabButton: UIButton!
     @IBOutlet weak var favouritesTabButton: UIButton!
     @IBOutlet weak var tabsScrollView: UIScrollView!
-    @IBOutlet weak var tabsPageControl: UIPageControl!
     @IBOutlet weak var mainTableView: UITableView!
     
     lazy var tabButtons = [storiesTabButton, videoTabButton, favouritesTabButton]
@@ -26,7 +25,7 @@ class MainViewController: UIViewController {
         mainTableView.delegate = self
         mainTableView.dataSource = self
         
-        mainTableView.register(UINib(nibName: "MovieCell", bundle: nil), forCellReuseIdentifier: "ReusableMovieCell")
+        mainTableView.register(UINib(nibName: "PopularMovieCell", bundle: nil), forCellReuseIdentifier: "ReusablePopularMovieCell")
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -74,8 +73,6 @@ extension MainViewController: UIScrollViewDelegate {
         
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
-        currentTabPage = pageIndex
-        tabsPageControl.currentPage = Int(pageIndex)
         
         setAllTabButtonsCollorGray()
         if pageIndex == 0 {
@@ -97,7 +94,7 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableMovieCell", for: indexPath) as! MovieCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusablePopularMovieCell", for: indexPath) as! popularMovieCell
         return cell.getPopular(page: 1, movieIndex: indexPath.row)
     }
     
