@@ -23,9 +23,10 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         tabsScrollView.delegate = self
+        mainTableView.delegate = self
         mainTableView.dataSource = self
         
-        mainTableView.register(UINib(nibName: "PopularMovieCell", bundle: nil), forCellReuseIdentifier: "ReusablePopularMovieCell")
+        mainTableView.register(UINib(nibName: "MovieCell", bundle: nil), forCellReuseIdentifier: "ReusableMovieCell")
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -87,15 +88,21 @@ extension MainViewController: UIScrollViewDelegate {
     }
 }
 
+//MARK: - UITableViewDataSource
+
 extension MainViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 20
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusablePopularMovieCell", for: indexPath) as! PopularMovieCell
-        return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableMovieCell", for: indexPath) as! MovieCell
+        return cell.getPopular(page: 1, movieIndex: indexPath.row)
     }
+    
+}
 
-
+extension MainViewController: UITableViewDelegate {
+    
 }

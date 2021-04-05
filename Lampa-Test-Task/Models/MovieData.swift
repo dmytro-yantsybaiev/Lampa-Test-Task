@@ -7,26 +7,17 @@
 
 import Foundation
 
-struct Movie {
+struct MovieData: Codable {
     let page: Int
     let results: [Result]
     let total_pages: Int
     let total_results: Int
 }
 
-struct Result {
-    let poster_path: String?
-    let adult: Bool
+struct Result: Codable {
+    let title: String
     let overview: String
     let release_date: String
-    let genre_ids: [Int]
     let id: Int
-    let original_title: String
-    let original_language: String
-    let title: String
-    let backdrop_path: String?
-    let popularity: Float
-    let vote_count: Int
-    let video: Bool
     let vote_average: Float
 }

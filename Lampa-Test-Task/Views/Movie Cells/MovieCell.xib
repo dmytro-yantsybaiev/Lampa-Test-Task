@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusablePopularMovieCell" rowHeight="841" id="KGk-i7-Jjw" customClass="PopularMovieCell" customModule="Lampa_Test_Task" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableMovieCell" rowHeight="841" id="KGk-i7-Jjw" customClass="MovieCell" customModule="Lampa_Test_Task" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="594" height="933"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -26,6 +26,7 @@
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="750" id="GDy-mD-Ak3"/>
+                                    <constraint firstAttribute="width" constant="500" id="V1h-YF-InH"/>
                                     <constraint firstAttribute="width" secondItem="EeN-MC-JAd" secondAttribute="height" multiplier="2:3" id="neZ-Xh-htx"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -78,7 +79,10 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="movieImageView" destination="EeN-MC-JAd" id="EXZ-YW-15I"/>
+                <outlet property="movieImageView" destination="EeN-MC-JAd" id="Lbb-Ar-b79"/>
+                <outlet property="overviewLabel" destination="j9X-0I-jha" id="CLM-LX-y5j"/>
+                <outlet property="releaseDateLabel" destination="uih-o1-euU" id="iZx-72-PAf"/>
+                <outlet property="titleLabel" destination="SOP-Fg-a4T" id="nRX-Ol-09B"/>
             </connections>
             <point key="canvasLocation" x="-378.26086956521743" y="199.21875"/>
         </tableViewCell>
