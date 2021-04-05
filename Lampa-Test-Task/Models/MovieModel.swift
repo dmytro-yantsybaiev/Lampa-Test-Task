@@ -12,5 +12,5 @@ struct MovieModel {
     let title: String
     let overview: String
     let release_date: String
-    let poster: UIImageView?
+    let posterPath: String?
 }

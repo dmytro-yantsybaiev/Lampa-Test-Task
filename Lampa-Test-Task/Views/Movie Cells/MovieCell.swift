@@ -19,6 +19,8 @@ class MovieCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         movieManager.delegate = self
+        
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -40,15 +42,18 @@ class MovieCell: UITableViewCell {
 
 extension MovieCell: MovieManagerDelegate {
     
-    func didUpdateMovie(_ movieManager: MovieManager, movie: MovieModel) {
+    func didUpdateMovieData(_ movieManager: MovieManager, movie: MovieModel) {
         DispatchQueue.main.async {
             self.titleLabel.text = movie.title
             self.overviewLabel.text = movie.overview
-            self.releaseDateLabel.text = movie.release_date
+            self.releaseDateLabel.text = "Release date: \(movie.release_date)"
+            if let posterPath = movie.posterPath {
+                self.movieImageView.loadImage(from: URL(string: posterPath)!)
+            }
         }
     }
     
-    func didFailUpdateMovie(error: Error) {
+    func didFailUpdateMovieData(error: Error) {
         print(error)
     }
 }

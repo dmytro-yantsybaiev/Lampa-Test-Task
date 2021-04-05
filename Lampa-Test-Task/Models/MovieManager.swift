@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 
 protocol MovieManagerDelegate {
-    func didUpdateMovie(_ movieManager: MovieManager, movie: MovieModel)
-    func didFailUpdateMovie(error: Error)
+    func didUpdateMovieData(_ movieManager: MovieManager, movie: MovieModel)
+    func didFailUpdateMovieData(error: Error)
 }
 
 struct MovieManager {
@@ -21,7 +21,7 @@ struct MovieManager {
     private let apiKey = "f910e2224b142497cc05444043cc8aa4"
     private let popularMovieURL = "https://api.themoviedb.org/3/movie/popular?"
     private let topRatedMovieURL = "https://api.themoviedb.org/3/movie/top_rated?"
-    private let posterURL = "https://image.tmdb.org/t/p/w500/"
+    private let posterURL = "https://image.tmdb.org/t/p/w500"
     
     mutating func fetchPopularMovie(page: Int, movieIndex: Int) {
         self.movieIndex = movieIndex
@@ -45,11 +45,11 @@ struct MovieManager {
             // Give the session a task
             let task = session.dataTask(with: url) { (data, response, error) in
                 if error != nil {
-                    delegate?.didFailUpdateMovie(error: error!)
+                    delegate?.didFailUpdateMovieData(error: error!)
                 } else {
                     if let safeData = data {
-                        if let movie = parseMovieJSON(safeData) {
-                            delegate?.didUpdateMovie(self, movie: movie)
+                        if let movie = parseJSON(movieData: safeData) {
+                            delegate?.didUpdateMovieData(self, movie: movie)
                         }
                     }
                 }
@@ -60,17 +60,20 @@ struct MovieManager {
         }
     }
     
-    private func parseMovieJSON(_ movieData: Data) -> MovieModel? {
+    private func parseJSON(movieData: Data) -> MovieModel? {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(MovieData.self, from: movieData)
-            let movie = MovieModel(title: decodedData.results[movieIndex].title, overview: decodedData.results[movieIndex].overview, release_date: decodedData.results[movieIndex].release_date, poster: nil)
+            
+            let movie = MovieModel(title: decodedData.results[movieIndex].title, overview: decodedData.results[movieIndex].overview, release_date: decodedData.results[movieIndex].release_date, posterPath: "\(posterURL)\(decodedData.results[movieIndex].poster_path)")
             return movie
         } catch {
-            delegate?.didFailUpdateMovie(error: error)
+            delegate?.didFailUpdateMovieData(error: error)
             return nil
         }
     }
+    
+//    private func parseJSON(posterData: Data) ->
 }
 
 //MARK: - Load UIImageView from URL

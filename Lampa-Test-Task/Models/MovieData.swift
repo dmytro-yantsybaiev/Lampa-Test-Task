@@ -20,4 +20,5 @@ struct Result: Codable {
     let release_date: String
     let id: Int
     let vote_average: Float
+    let poster_path: String
 }
