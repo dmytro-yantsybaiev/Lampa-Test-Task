@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PopularMovieCell: UITableViewCell {
+class MovieCell: UITableViewCell {
     
     @IBOutlet weak var movieImageView: UIImageView!    
     @IBOutlet weak var titleLabel: UILabel!
@@ -25,12 +25,12 @@ class PopularMovieCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func getPopular(page: Int, movieIndex: Int) -> PopularMovieCell {
+    func getPopular(page: Int, movieIndex: Int) -> MovieCell {
         movieManager.fetchPopularMovie(page: page, movieIndex: movieIndex)
         return self
     }
     
-    func getTopRated(page: Int, movieIndex: Int) -> PopularMovieCell {
+    func getTopRated(page: Int, movieIndex: Int) -> MovieCell {
         movieManager.fetchTopRatedMovie(page: page, movieIndex: movieIndex)
         return self
     }
@@ -38,7 +38,7 @@ class PopularMovieCell: UITableViewCell {
 
 //MARK: - MovieManagerDelegate
 
-extension PopularMovieCell: MovieManagerDelegate {
+extension MovieCell: MovieManagerDelegate {
     
     func didUpdateMovieData(_ movieManager: MovieManager, movie: MovieModel) {
         DispatchQueue.main.async {

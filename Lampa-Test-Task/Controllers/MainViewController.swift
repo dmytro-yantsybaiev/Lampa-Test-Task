@@ -25,7 +25,7 @@ class MainViewController: UIViewController {
         mainTableView.dataSource = self
         
         mainTableView.register(UINib(nibName: "TopRatedMovieCell", bundle: nil), forCellReuseIdentifier: "ReusableTopRatedMovieCell")
-        mainTableView.register(UINib(nibName: "PopularMovieCell", bundle: nil), forCellReuseIdentifier: "ReusablePopularMovieCell")
+        mainTableView.register(UINib(nibName: "MovieCell", bundle: nil), forCellReuseIdentifier: "ReusableMovieCell")
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -92,7 +92,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableTopRatedMovieCell", for: indexPath) as! TopRatedMovieCell
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ReusablePopularMovieCell", for: indexPath) as! PopularMovieCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableMovieCell", for: indexPath) as! MovieCell
             return cell.getPopular(page: 1, movieIndex: indexPath.row - 1)
         }
         
