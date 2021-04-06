@@ -40,7 +40,7 @@ class TopRatedMovieCell: UITableViewCell {
 extension TopRatedMovieCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        1
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -51,10 +51,6 @@ extension TopRatedMovieCell: UICollectionViewDelegate, UICollectionViewDataSourc
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReusableTopRatedCollectionCell", for: indexPath) as! TopRatedCollectionCell
         return cell.getTopRated(page: 1, movieIndex: indexPath.row)
     }
-    
-    //    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-    //        topRatedPageControl.currentPage = indexPath.row
-    //    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageIndex = round(scrollView.contentOffset.x/topRatedMovieCollection.frame.width)

@@ -16,7 +16,6 @@ class MainViewController: UIViewController {
     @IBOutlet weak var mainTableView: UITableView!
     
     lazy var tabButtons = [storiesTabButton, videoTabButton, favouritesTabButton]
-    var currentTabPage: CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +62,7 @@ class MainViewController: UIViewController {
     }
     
     func changeScrollViewPositionToSelectedTab(_ tabButton: UIButton) {
-        currentTabPage = CGFloat(tabButtons.firstIndex(of: tabButton)!)
+        let currentTabPage = CGFloat(tabButtons.firstIndex(of: tabButton)!)
         tabsScrollView.contentOffset.x = view.frame.width * currentTabPage
     }
 }
@@ -73,16 +72,9 @@ class MainViewController: UIViewController {
 extension MainViewController: UIScrollViewDelegate {
         
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
-        
+        let pageIndex = Int(round(scrollView.contentOffset.x/view.frame.width))
         setAllTabButtonsCollorGray()
-        if pageIndex == 0 {
-            setSelectedTabButtonCollorWhite(tabButtons[0]!)
-        } else if pageIndex == 1 {
-            setSelectedTabButtonCollorWhite(tabButtons[1]!)
-        } else if pageIndex == 2 {
-            setSelectedTabButtonCollorWhite(tabButtons[2]!)
-        }
+        setSelectedTabButtonCollorWhite(tabButtons[pageIndex]!)
     }
 }
 
