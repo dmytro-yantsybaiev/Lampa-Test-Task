@@ -57,6 +57,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C200704261B8EBF00268C3C /* Movie Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0C81EDD4261B73F000151B30 /* PopularMovieCell.swift */,
+				0C81EDC5261B66AE00151B30 /* TopRatedMovieCell.swift */,
+				0C81EDCB261B6DE000151B30 /* TopRatedCollectionCell.swift */,
+			);
+			path = "Movie Cells";
+			sourceTree = "<group>";
+		};
 		0C64C645261894C40006DECA = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +103,7 @@
 			children = (
 				0C64C67A2618CCC10006DECA /* MainViewController.swift */,
 				0CF6077D2619BD6F00BDF4CC /* SearchViewController.swift */,
+				0C200704261B8EBF00268C3C /* Movie Cells */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -119,12 +130,9 @@
 		0CAAAD592619D8D400925E51 /* Movie Cells */ = {
 			isa = PBXGroup;
 			children = (
-				0C81EDD4261B73F000151B30 /* PopularMovieCell.swift */,
 				0C6794D9261A5EE8009973F8 /* PopularMovieCell.xib */,
 				0C81EDC6261B66AE00151B30 /* TopRatedMovieCell.xib */,
-				0C81EDC5261B66AE00151B30 /* TopRatedMovieCell.swift */,
 				0C81EDCC261B6DE000151B30 /* TopRatedCollectionCell.xib */,
-				0C81EDCB261B6DE000151B30 /* TopRatedCollectionCell.swift */,
 			);
 			path = "Movie Cells";
 			sourceTree = "<group>";

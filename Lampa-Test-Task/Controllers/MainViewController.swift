@@ -25,6 +25,7 @@ class MainViewController: UIViewController {
         mainTableView.delegate = self
         mainTableView.dataSource = self
         
+        mainTableView.register(UINib(nibName: "TopRatedMovieCell", bundle: nil), forCellReuseIdentifier: "ReusableTopRatedMovieCell")
         mainTableView.register(UINib(nibName: "PopularMovieCell", bundle: nil), forCellReuseIdentifier: "ReusablePopularMovieCell")
     }
     
@@ -85,23 +86,48 @@ extension MainViewController: UIScrollViewDelegate {
     }
 }
 
-//MARK: - UITableViewDataSource
+//MARK: - UITableViewDelegate, UITableViewDataSource
 
-extension MainViewController: UITableViewDataSource {
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return 21
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusablePopularMovieCell", for: indexPath) as! PopularMovieCell
-        return cell.getPopular(page: 1, movieIndex: indexPath.row)
+        
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableTopRatedMovieCell", for: indexPath) as! TopRatedMovieCell
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReusablePopularMovieCell", for: indexPath) as! PopularMovieCell
+            return cell.getPopular(page: 1, movieIndex: indexPath.row - 1)
+        }
+        
     }
     
 }
 
-//MARK: - UITableViewDelegate
+//MARK: - Load UIImageView from URL
 
-extension MainViewController: UITableViewDelegate {
-    
+extension UIImageView {
+    func loadImage(from url: URL) {
+        let imageCache = NSCache<AnyObject, UIImage>()
+        
+        if let cachedImage = imageCache.object(forKey: url as AnyObject) {
+            self.image = cachedImage
+            return
+        }
+        
+        DispatchQueue.global().async { [weak self] in
+            if let imageData = try? Data(contentsOf: url) {
+                if let image = UIImage(data: imageData) {
+                    DispatchQueue.main.async {
+                        imageCache.setObject(image, forKey: url as AnyObject)
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
 }
