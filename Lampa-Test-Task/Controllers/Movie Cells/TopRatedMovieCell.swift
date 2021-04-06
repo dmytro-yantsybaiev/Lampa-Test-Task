@@ -12,7 +12,7 @@ class TopRatedMovieCell: UITableViewCell {
     @IBOutlet weak var topRatedMovieCollection: UICollectionView!
     @IBOutlet weak var topRatedPageControl: UIPageControl!
     
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -21,11 +21,16 @@ class TopRatedMovieCell: UITableViewCell {
         
         topRatedMovieCollection.register(UINib(nibName: "TopRatedCollectionCell", bundle: nil), forCellWithReuseIdentifier: "ReusableTopRatedCollectionCell")
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        (topRatedMovieCollection.collectionViewLayout as? UICollectionViewFlowLayout)?
+            .itemSize = CGSize(width: contentView.bounds.width, height: contentView.bounds.height)
     }
     
 }
@@ -35,11 +40,11 @@ class TopRatedMovieCell: UITableViewCell {
 extension TopRatedMovieCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        10
+        1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 20
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -47,5 +52,12 @@ extension TopRatedMovieCell: UICollectionViewDelegate, UICollectionViewDataSourc
         return cell.getTopRated(page: 1, movieIndex: indexPath.row)
     }
     
+    //    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    //        topRatedPageControl.currentPage = indexPath.row
+    //    }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let pageIndex = round(scrollView.contentOffset.x/topRatedMovieCollection.frame.width)
+        topRatedPageControl.currentPage = Int(pageIndex)
+    }
 }
