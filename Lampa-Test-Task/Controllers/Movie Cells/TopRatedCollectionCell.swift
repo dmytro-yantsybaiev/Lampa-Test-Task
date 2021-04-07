@@ -21,13 +21,13 @@ class TopRatedCollectionCell: UICollectionViewCell {
         movieManager.delegate = self
     }
     
-    func getPopular(page: Int, movieIndex: Int) -> TopRatedCollectionCell {
-        movieManager.fetchPopularMovie(page: page, movieIndex: movieIndex)
+    func getPopular(movieIndex: Int) -> TopRatedCollectionCell {
+        movieManager.fetchPopularMovie(movieIndex: movieIndex)
         return self
     }
     
-    func getTopRated(page: Int, movieIndex: Int) -> TopRatedCollectionCell {
-        movieManager.fetchTopRatedMovie(page: page, movieIndex: movieIndex)
+    func getTopRated(movieIndex: Int) -> TopRatedCollectionCell {
+        movieManager.fetchTopRatedMovie(movieIndex: movieIndex)
         return self
     }
 }

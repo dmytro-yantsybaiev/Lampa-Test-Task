@@ -49,7 +49,7 @@ extension TopRatedMovieCell: UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReusableTopRatedCollectionCell", for: indexPath) as! TopRatedCollectionCell
-        return cell.getTopRated(page: 1, movieIndex: indexPath.row)
+        return cell.getTopRated(movieIndex: indexPath.row)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

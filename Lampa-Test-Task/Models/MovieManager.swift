@@ -16,22 +16,26 @@ protocol MovieManagerDelegate {
 struct MovieManager {
     
     var delegate: MovieManagerDelegate?
-    var movieIndex = 0
+    
+    private var moviePage = 1
+    private var movieIndex = 0
     
     private let apiKey = "f910e2224b142497cc05444043cc8aa4"
     private let popularMovieURL = "https://api.themoviedb.org/3/movie/popular?"
     private let topRatedMovieURL = "https://api.themoviedb.org/3/movie/top_rated?"
     private let posterURL = "https://image.tmdb.org/t/p/w500"
     
-    mutating func fetchPopularMovie(page: Int, movieIndex: Int) {
-        self.movieIndex = movieIndex
-        let movieURL = "\(popularMovieURL)api_key=\(apiKey)&language=en&page=\(page)"
+    mutating func fetchPopularMovie(movieIndex: Int) {
+        self.moviePage = ((movieIndex / 20) + 1)
+        self.movieIndex = movieIndex % 20
+        let movieURL = "\(popularMovieURL)api_key=\(apiKey)&language=en&page=\(moviePage)"
         performRequest(with: movieURL)
     }
     
-    mutating func fetchTopRatedMovie(page: Int, movieIndex: Int) {
-        self.movieIndex = movieIndex
-        let movieURL = "\(topRatedMovieURL)api_key=\(apiKey)&language=en&page=\(page)"
+    mutating func fetchTopRatedMovie(movieIndex: Int) {
+        self.moviePage = ((movieIndex / 20) + 1)
+        self.movieIndex = movieIndex % 20
+        let movieURL = "\(topRatedMovieURL)api_key=\(apiKey)&language=en&page=\(moviePage)"
         performRequest(with: movieURL)
     }
 
@@ -74,4 +78,28 @@ struct MovieManager {
     }
     
 //    private func parseJSON(posterData: Data) ->
+}
+
+//MARK: - Load UIImageView from URL
+
+extension UIImageView {
+    func loadImage(from url: URL) {
+        let imageCache = NSCache<AnyObject, UIImage>()
+        
+        if let cachedImage = imageCache.object(forKey: url as AnyObject) {
+            self.image = cachedImage
+            return
+        }
+        
+        DispatchQueue.global().async { [weak self] in
+            if let imageData = try? Data(contentsOf: url) {
+                if let image = UIImage(data: imageData) {
+                    DispatchQueue.main.async {
+                        imageCache.setObject(image, forKey: url as AnyObject)
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
 }

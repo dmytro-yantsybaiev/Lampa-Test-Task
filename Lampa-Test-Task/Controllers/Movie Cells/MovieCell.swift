@@ -25,13 +25,13 @@ class MovieCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func getPopular(page: Int, movieIndex: Int) -> MovieCell {
-        movieManager.fetchPopularMovie(page: page, movieIndex: movieIndex)
+    func getPopularMovie(movieIndex: Int) -> MovieCell {
+        movieManager.fetchPopularMovie(movieIndex: movieIndex)
         return self
     }
     
-    func getTopRated(page: Int, movieIndex: Int) -> MovieCell {
-        movieManager.fetchTopRatedMovie(page: page, movieIndex: movieIndex)
+    func getTopRatedMovie(movieIndex: Int) -> MovieCell {
+        movieManager.fetchTopRatedMovie(movieIndex: movieIndex)
         return self
     }
 }
