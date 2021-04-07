@@ -15,18 +15,18 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchBar.delegate = self
+//        searchBar.delegate = self
 //        searchTableView.delegate = self
 //        searchTableView.dataSource = self
     }
 }
 
-//MARK: - UISearchBarDelegate
-
-extension SearchViewController: UISearchBarDelegate {
-    
-}
-
+////MARK: - UISearchBarDelegate
+//
+//extension SearchViewController: UISearchBarDelegate {
+//
+//}
+//
 ////MARK: - Section Heading
 //
 //extension SearchViewController: UITableViewDelegate, UITableViewDataSource {

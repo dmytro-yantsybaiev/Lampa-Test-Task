@@ -16,22 +16,16 @@ class NetworkManager {
     
     func fetchPopularMovie(for page: Int, completionHandler: @escaping (MovieData) -> Void) {
         let movieURL = "\(self.popularMovieURL)api_key=\(self.apiKey)&language=en&page=\(page)"
-        let url = URL(string: movieURL)!
-        let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
-            if let error = error {
-                print("Error with fetching data: \(error)")
-                return
-            }
-            if let data = data,
-               let movieData = try? JSONDecoder().decode(MovieData.self, from: data) {
-                completionHandler(movieData)
-            }
-        })
-        task.resume()
+        performRequest(with: movieURL, completionHandler: completionHandler)
     }
     
     func fetchTopRatedMovie(for page: Int, completionHandler: @escaping (MovieData) -> Void) {
         let movieURL = "\(self.topRatedMovieURL)api_key=\(self.apiKey)&language=en&page=\(page)"
+        performRequest(with: movieURL, completionHandler: completionHandler)
+    }
+
+    func performRequest(with url: String, completionHandler: @escaping (MovieData) -> Void) {
+        let movieURL = url
         let url = URL(string: movieURL)!
         let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
             if let error = error {
