@@ -55,7 +55,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="0.1030213261993838" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.10196178409999999" green="0.10195901239999999" blue="0.1019608751" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="EoL-Pl-Zhl" secondAttribute="bottom" id="5pb-WU-nJx"/>
                                     <constraint firstItem="EoL-Pl-Zhl" firstAttribute="leading" secondItem="1bK-U1-AA8" secondAttribute="leading" id="COd-7X-D64"/>
@@ -119,7 +119,7 @@
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gur-v7-1NQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="752.66666666666663"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     </tableView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -136,11 +136,11 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qz-Kp-Nx2">
                                                         <rect key="frame" x="115.00000000000001" y="352.33333333333337" width="184.33333333333337" height="48"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="6qz-Kp-Nx2" firstAttribute="centerX" secondItem="ubB-9a-YtZ" secondAttribute="centerX" id="3aI-4g-psK"/>
                                                     <constraint firstItem="6qz-Kp-Nx2" firstAttribute="centerY" secondItem="ubB-9a-YtZ" secondAttribute="centerY" id="lYp-qW-cZQ"/>
@@ -152,11 +152,11 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3A-xe-i8s">
                                                         <rect key="frame" x="115.00000000000001" y="352.33333333333337" width="184.33333333333337" height="48"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="c3A-xe-i8s" firstAttribute="centerX" secondItem="hl1-qY-DjY" secondAttribute="centerX" id="ENL-em-NT1"/>
                                                     <constraint firstItem="c3A-xe-i8s" firstAttribute="centerY" secondItem="hl1-qY-DjY" secondAttribute="centerY" id="gxh-9M-wVp"/>
@@ -177,7 +177,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3Ag-n4-QCo"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yAG-nF-Qfm" firstAttribute="width" secondItem="1bK-U1-AA8" secondAttribute="width" id="1Ec-WK-Tc9"/>

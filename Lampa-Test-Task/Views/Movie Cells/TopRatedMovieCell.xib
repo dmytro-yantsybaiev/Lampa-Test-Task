@@ -20,7 +20,7 @@
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vKJ-KQ-BMi">
                         <rect key="frame" x="0.0" y="0.0" width="500" height="875"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="vKJ-KQ-BMi" secondAttribute="height" multiplier="4:7" id="dbh-UJ-xXs"/>
                             <constraint firstAttribute="width" constant="500" id="hve-ma-829"/>
@@ -49,7 +49,7 @@
                         </constraints>
                     </imageView>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 <constraints>
                     <constraint firstItem="Jny-sj-p39" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="60" id="1LN-NW-XAA"/>
                     <constraint firstAttribute="bottomMargin" secondItem="SIM-36-87m" secondAttribute="bottom" constant="150" id="359-RP-NqK"/>
@@ -72,6 +72,9 @@
     </objects>
     <resources>
         <image name="TOP" width="52.5" height="22"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

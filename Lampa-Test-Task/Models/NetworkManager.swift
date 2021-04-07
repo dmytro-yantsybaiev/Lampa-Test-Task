@@ -13,14 +13,21 @@ class NetworkManager {
     private let apiKey = "f910e2224b142497cc05444043cc8aa4"
     private let popularMovieURL = "https://api.themoviedb.org/3/movie/popular?"
     private let topRatedMovieURL = "https://api.themoviedb.org/3/movie/top_rated?"
+    private let searchMovieURL = "https://api.themoviedb.org/3/search/movie?"
     
-    func fetchPopularMovie(for page: Int, completionHandler: @escaping (MovieData) -> Void) {
-        let movieURL = "\(self.popularMovieURL)api_key=\(self.apiKey)&language=en&page=\(page)"
+    func fetchPopularMovie(completionHandler: @escaping (MovieData) -> Void) {
+        let movieURL = "\(self.popularMovieURL)api_key=\(self.apiKey)&language=en&page=1"
         performRequest(with: movieURL, completionHandler: completionHandler)
     }
     
-    func fetchTopRatedMovie(for page: Int, completionHandler: @escaping (MovieData) -> Void) {
-        let movieURL = "\(self.topRatedMovieURL)api_key=\(self.apiKey)&language=en&page=\(page)"
+    func fetchTopRatedMovie(completionHandler: @escaping (MovieData) -> Void) {
+        let movieURL = "\(self.topRatedMovieURL)api_key=\(self.apiKey)&language=en&page=1"
+        performRequest(with: movieURL, completionHandler: completionHandler)
+    }
+    
+    func fetchSearchResult(movieName: String, completionHandler: @escaping (MovieData) -> Void) {
+        let movieName = movieName.replacingOccurrences(of: " ", with: "+")
+        let movieURL = "\(self.searchMovieURL)api_key=\(self.apiKey)&query=\(movieName)"
         performRequest(with: movieURL, completionHandler: completionHandler)
     }
 

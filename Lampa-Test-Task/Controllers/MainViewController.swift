@@ -18,7 +18,6 @@ class MainViewController: UIViewController {
     private lazy var tabButtons = [storiesTabButton, videoTabButton, favouritesTabButton]
     
     private var popularMoviesData: MovieData?
-    private var resultPage = 1
     private var mainTableRows = 1
     
     override func viewDidLoad() {
@@ -31,9 +30,14 @@ class MainViewController: UIViewController {
         mainTableView.register(UINib(nibName: "TopRatedMovieCell", bundle: nil), forCellReuseIdentifier: "ReusableTopRatedMovieCell")
         mainTableView.register(UINib(nibName: "MovieCell", bundle: nil), forCellReuseIdentifier: "ReusableMovieCell")
         
-        NetworkManager().fetchPopularMovie(for: resultPage) { [weak self] (movieData) in
+        NetworkManager().fetchPopularMovie { [weak self] (movieData) in
             self?.popularMoviesData = movieData
-            self?.mainTableRows = movieData.results.capacity - 3
+            let capacity = movieData.results.capacity
+            if capacity > 20 {
+                self?.mainTableRows = 20
+            } else {
+                self?.mainTableRows = capacity
+            }
             DispatchQueue.main.async {
                 self?.mainTableView.reloadData()
             }
@@ -55,12 +59,6 @@ class MainViewController: UIViewController {
     
     @IBAction func searchButtonPressed(_ sender: UIButton) {
         self.performSegue(withIdentifier: "goToSearch", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //        if segue.identifier == "goToSearch" {
-        //            let searchVC = segue.destination as! SearchViewController
-        //        }
     }
     
     func setAllTabButtonsCollorGray() {

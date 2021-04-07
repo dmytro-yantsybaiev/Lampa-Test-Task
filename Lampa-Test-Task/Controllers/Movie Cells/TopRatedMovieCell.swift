@@ -13,7 +13,6 @@ class TopRatedMovieCell: UITableViewCell {
     @IBOutlet weak var topRatedPageControl: UIPageControl!
     
     private var topRatedMoviesData: MovieData?
-    private var resultPage = 1
     private var collectionCapacity = 1
     
     override func awakeFromNib() {
@@ -24,9 +23,14 @@ class TopRatedMovieCell: UITableViewCell {
         
         topRatedMovieCollection.register(UINib(nibName: "TopRatedCollectionCell", bundle: nil), forCellWithReuseIdentifier: "ReusableTopRatedCollectionCell")
         
-        NetworkManager().fetchTopRatedMovie(for: resultPage) { [weak self] (movieData) in
+        NetworkManager().fetchTopRatedMovie { [weak self] (movieData) in
             self?.topRatedMoviesData = movieData
-            self?.collectionCapacity = movieData.results.capacity - 3
+            let capacity = movieData.results.capacity
+            if capacity > 20 {
+                self?.collectionCapacity = 20
+            } else {
+                self?.collectionCapacity = capacity
+            }
             DispatchQueue.main.async {
                 self?.topRatedMovieCollection.reloadData()
             }
