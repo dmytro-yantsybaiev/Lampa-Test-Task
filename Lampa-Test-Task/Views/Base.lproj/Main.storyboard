@@ -222,17 +222,26 @@
                                 <rect key="frame" x="0.0" y="60" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eJi-5e-WeM">
+                                <rect key="frame" x="0.0" y="116" width="414" height="726"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fvW-U9-igZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="eJi-5e-WeM" secondAttribute="bottom" id="Rrn-fj-mG6"/>
                             <constraint firstItem="vZ2-du-W5f" firstAttribute="top" secondItem="fvW-U9-igZ" secondAttribute="top" constant="60" id="XSL-Gl-wyI"/>
-                            <constraint firstItem="vZ2-du-W5f" firstAttribute="leading" secondItem="fvW-U9-igZ" secondAttribute="leading" id="wNR-Qu-FRK"/>
-                            <constraint firstItem="fvW-U9-igZ" firstAttribute="trailing" secondItem="vZ2-du-W5f" secondAttribute="trailing" id="xD4-M0-I8w"/>
+                            <constraint firstItem="eJi-5e-WeM" firstAttribute="leading" secondItem="Qxp-OR-IFg" secondAttribute="leading" id="doY-Rh-aqR"/>
+                            <constraint firstItem="eJi-5e-WeM" firstAttribute="top" secondItem="vZ2-du-W5f" secondAttribute="bottom" id="jv8-Fg-EOe"/>
+                            <constraint firstAttribute="trailing" secondItem="eJi-5e-WeM" secondAttribute="trailing" id="klF-Mf-ccs"/>
+                            <constraint firstItem="vZ2-du-W5f" firstAttribute="leading" secondItem="Qxp-OR-IFg" secondAttribute="leading" id="wNR-Qu-FRK"/>
+                            <constraint firstAttribute="trailing" secondItem="vZ2-du-W5f" secondAttribute="trailing" id="xD4-M0-I8w"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="vZ2-du-W5f" id="QaH-AR-rkv"/>
+                        <outlet property="searchTableView" destination="eJi-5e-WeM" id="WhP-CX-TBe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NzI-CL-Wqy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

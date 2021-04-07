@@ -15,7 +15,11 @@ class MainViewController: UIViewController {
     @IBOutlet weak var tabsScrollView: UIScrollView!
     @IBOutlet weak var mainTableView: UITableView!
     
-    lazy var tabButtons = [storiesTabButton, videoTabButton, favouritesTabButton]
+    private lazy var tabButtons = [storiesTabButton, videoTabButton, favouritesTabButton]
+    
+    private var popularMoviesData: MovieData?
+    private var resultPage = 1
+    private var mainTableRows = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +30,18 @@ class MainViewController: UIViewController {
         
         mainTableView.register(UINib(nibName: "TopRatedMovieCell", bundle: nil), forCellReuseIdentifier: "ReusableTopRatedMovieCell")
         mainTableView.register(UINib(nibName: "MovieCell", bundle: nil), forCellReuseIdentifier: "ReusableMovieCell")
+        
+        NetworkManager().fetchPopularMovie(for: resultPage) { [weak self] (movieData) in
+            self?.popularMoviesData = movieData
+            self?.mainTableRows = movieData.results.capacity - 3
+            DispatchQueue.main.async {
+                self?.mainTableView.reloadData()
+            }
+        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-          return .lightContent
+        return .lightContent
     }
     
     @IBAction func tabButtonPressed(_ sender: UIButton) {
@@ -46,9 +58,9 @@ class MainViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "goToSearch" {
-//            let searchVC = segue.destination as! SearchViewController
-//        }
+        //        if segue.identifier == "goToSearch" {
+        //            let searchVC = segue.destination as! SearchViewController
+        //        }
     }
     
     func setAllTabButtonsCollorGray() {
@@ -70,7 +82,7 @@ class MainViewController: UIViewController {
 //MARK: - UIScrollViewDelegate
 
 extension MainViewController: UIScrollViewDelegate {
-        
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageIndex = Int(round(scrollView.contentOffset.x/view.frame.width))
         setAllTabButtonsCollorGray()
@@ -83,7 +95,7 @@ extension MainViewController: UIScrollViewDelegate {
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 31
+        return mainTableRows + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -93,9 +105,18 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableMovieCell", for: indexPath) as! MovieCell
-            return cell.getPopularMovie(movieIndex: indexPath.row - 1)
+            updateCellUI(cell: cell, index: indexPath.row - 1)
+            return cell
         }
-        
     }
     
+    func updateCellUI(cell: MovieCell, index: Int) {
+        let result = popularMoviesData?.results[index]
+        cell.titleLabel.text = result?.title
+        cell.overviewLabel.text = result?.overview
+        cell.releaseDateLabel.text = result?.release_date
+        if let posterPath = result?.poster_path {
+            cell.movieImageView.loadImage(from: URL(string: "https://image.tmdb.org/t/p/w500\(posterPath)")!)
+        }
+    }
 }
